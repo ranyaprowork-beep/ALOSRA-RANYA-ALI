@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Osra Supermarket</title>
+
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7F3E8;
+            color: #354B38;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #234D36;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #F7F3E8;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #D9CBA5;
+        }
+
+        /* Original logo image on the right */
+        .logo img {
+            width: 125px;
+            height: 60px;
+            object-fit: contain;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Welcome section */
+        .hero {
+            text-align: center;
+            padding: 65px 20px;
+            background-color: #E8EBD9;
+        }
+
+        .hero h1 {
+            color: #234D36;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* Main button */
+        .hero a {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 28px;
+            background-color: #386641;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #193D2A;
+            transform: translateY(-3px);
+        }
+
+        /* Advertisement section */
+        .offers {
+            padding: 50px 6%;
+            text-align: center;
+        }
+
+        .offers h2 {
+            color: #234D36;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .offers-intro {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        /* Three advertisement cards */
+        .advertisements {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .ad-card {
+            background-color: #FFFDF6;
+            width: 30%;
+            min-width: 240px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(35, 77, 54, 0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .ad-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(35, 77, 54, 0.2);
+        }
+
+        .ad-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .ad-card img:hover {
+            transform: scale(1.03);
+        }
+
+        .ad-card h3 {
+            color: #386641;
+            font-size: 21px;
+            margin: 15px 12px 8px;
+        }
+
+        .ad-card p {
+            font-size: 15px;
+            padding: 0 15px 22px;
+        }
+
+        /* About Us section */
+        .about {
+            background-color: #E8EBD9;
+            padding: 45px 10%;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #234D36;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* Contact footer */
+        footer {
+            background-color: #234D36;
+            color: #F7F3E8;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        footer h2 {
+            color: #E5D8B5;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        footer a {
+            color: #E5D8B5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #718674;
+            font-size: 13px;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column-reverse;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .ad-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <!-- Logo image -->
+        <div class="logo">
+            <a href="#home">
+                <img src="LOGO/WhatsApp Image 2026-10-24 at 9.14.51 PM.jpeg"
+                     alt="Al Osra Supermarket Logo">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main homepage content -->
+    <main>
+
+        <!-- Welcome section -->
+        <section class="hero" id="home">
+            <h1>Welcome to Al Osra Supermarket</h1>
+
+            <p>
+                Al Osra is your destination for quality groceries,
+                fresh food, and everyday essentials. We aim to make
+                shopping convenient and enjoyable for every family.
+                Discover a wide range of local and international
+                products for your everyday needs.
+            </p>
+
+            <a href="#products">Explore Our Offers</a>
+        </section>
+
+        <!-- Three advertisement pictures -->
+        <section class="offers" id="products">
+            <h2>Discover Our Offers</h2>
+
+            <p class="offers-intro">
+                Explore our featured products and enjoy shopping with us.
+            </p>
+
+            <div class="advertisements">
+
+                <!-- First advertisement -->
+                <div class="ad-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"
+                        alt="Fresh fruits and vegetables"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579113800032-c38bd7635818?auto=format&fit=crop&w=700&q=80';">
+
+                    <h3>Fresh Fruits and Vegetables</h3>
+
+                    <p>
+                        Enjoy fresh produce and healthy choices
+                        for you and your family.
+                    </p>
+                </div>
+
+                <!-- Second advertisement -->
+                <div class="ad-card">
+                    <img
+                        src="LOGO/evvv.jpg"
+                        alt="Grocery products in a supermarket"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80';">
+
+                    <h3>Everyday Essentials</h3>
+
+                    <p>
+                        Find your everyday grocery essentials
+                        in one convenient place.
+                    </p>
+                </div>
+
+                <!-- Third advertisement -->
+                <div class="ad-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=700&q=80"
+                        alt="Fresh food for a family meal"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80';">
+
+                    <h3>Good Food, Happy Family</h3>
+
+                    <p>
+                        Discover ingredients and products
+                        to make every family meal special.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Al Osra -->
+        <section class="about" id="about">
+            <h2>About Al Osra</h2>
+
+            <p>
+                Al Osra is a supermarket brand in Bahrain offering
+                a variety of grocery products, fresh food, household
+                items, and everyday essentials. Our goal is to provide
+                customers with quality products and a convenient
+                shopping experience for their daily needs.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer with contact information -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+
+        <p>
+            Have a question? We would love to hear from you.
+            Contact Al Osra Supermarket for more information.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:orders@alosraonline.com">
+                orders@alosraonline.com
+            </a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+97317739290">+973 1773 9290</a>
+        </p>
+
+        <div class="copyright">
+            <p>&copy; 2026 Al Osra Supermarket. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
